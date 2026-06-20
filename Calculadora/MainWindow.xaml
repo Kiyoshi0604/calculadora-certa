@@ -5,66 +5,154 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculadora"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="550">
+        Title="MainWindow" Height="650" Width="450">
     <Window.Background>
         <ImageBrush ImageSource="/download.jpg"/>
     </Window.Background>
 
     <Grid HorizontalAlignment="Center" Height="631" Margin="0,10,0,0" VerticalAlignment="Top" Width="515">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="41*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="97*"/>
-            <RowDefinition Height="355*"/>
+            <RowDefinition Height="135*"/>
+            <RowDefinition Height="147*"/>
+            <RowDefinition Height="349*"/>
         </Grid.RowDefinitions>
 
         <!-- Display -->
         <TextBox x:Name="txtDisplay"
                  Grid.Row="0"
-                 Margin="61,10,61,10"
+                 Margin="68,50,54,117"
                  Height="115"
                  FontSize="36"
                  TextAlignment="Right"
                  VerticalContentAlignment="Center"
                  IsReadOnly="True"
                  Background="White"
-                 BorderBrush="Black"/>
+                 BorderBrush="Black" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
 
-        <!-- Buttons (existing layout kept) -->
-        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="304,345,0,0" Grid.Row="1" Click="btn3_Click"/>
-        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="304,223,0,0" Grid.Row="1" Click="btn9_Click"/>
-        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="223,345,0,0" Grid.Row="1" Click="btn2_Click"/>
-        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="223,223,0,0" Grid.Row="1" Click="btn8_Click"/>
-        <Button x:Name="btninverter" Content="+/-" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="142,406,0,0" Grid.Row="1"/>
-        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="223,284,0,0" Grid.Row="1" Click="btn5_Click"/>
-        <Button x:Name="btnfecha" Content=")" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="61,406,0,0" Grid.Row="1"/>
-        <Button x:Name="btnelevar" Content="x^y" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="61,223,0,0" Grid.Row="1"/>
-        <Button x:Name="btnponto" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="304,406,0,0" Grid.Row="1"/>
-        <Button x:Name="btnabre" Content="(" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="61,345,0,0" Grid.Row="1"/>
-        <Button x:Name="btnnotacao" Content="10^x" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="61,284,0,0" Grid.Row="1"/>
-        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="142,284,0,0" Grid.Row="1" Click="btn4_Click"/>
-        <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="142,223,0,0" Grid.Row="1" Click="btn7_Click"/>
-        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="304,284,0,0" Grid.Row="1" Click="btn6_Click"/>
-        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="142,345,0,0" Grid.Row="1" Click="btn1_Click"/>
-        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="223,406,0,0" Grid.Row="1" Click="btn0_Click"/>
-        <Button x:Name="btnigual" Content="=" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="385,406,0,0" Grid.Row="1"/>
-        <Button x:Name="btnmais" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="385,345,0,0" Grid.Row="1" Click="btnmais_Click"/>
-        <Button x:Name="btnmenos" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="385,284,0,0" Grid.Row="1" Click="btnmenos_Click"/>
-        <Button x:Name="btnmultiplicacao" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="385,223,0,0" Grid.Row="1" Click="btnmultiplicacao_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="304,159,0,0" Grid.Row="1"/>
-        <Button x:Name="btnfracao" Content="1/x" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="223,159,0,0" Grid.Row="1"/>
-        <Button x:Name="btnquadrado" Content="x^2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="142,159,0,0" Grid.Row="1"/>
-        <Button x:Name="btn_raiz" Content="√" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="61,159,0,0" Grid.Row="1"/>
-        <Button x:Name="btnporcentagem" Content="%" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="61,98,0,0" Grid.Row="1"/>
-        <Button x:Name="btnms" Content="MS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="385,37,0,0" Grid.Row="1"/>
-        <Button x:Name="btnmr" Content="MR" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="304,37,0,0" Grid.Row="1"/>
-        <Button x:Name="btnmc" Content="MC" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="223,37,0,0" Grid.Row="1"/>
-        <Button x:Name="btnmmais" Content="M+" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="142,37,0,0" Grid.Row="1"/>
-        <Button x:Name="btnmmenos" Content="M-" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="61,37,0,0" Grid.Row="1"/>
-        <Button x:Name="btnc" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="304,98,0,0" Grid.Row="1" Click="btnc_Click"/>
-        <Button x:Name="btnce" Content="CE" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="223,98,0,0" Grid.Row="1" Click="btnce_Click"/>
-        <Button x:Name="btnpi" Content="pi" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="142,98,0,0" Grid.Row="1"/>
-        <Button x:Name="btndelete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="385,98,0,0" Grid.Row="1" Click="btndelete_Click"/>
-        <Button x:Name="btndivisao" Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="385,159,0,0" Grid.Row="1" Click="btndivisao_Click"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="-1,401,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Source="/susto.png"/>
+        <!-- Button -->
+        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="259,191,0,0" Grid.Row="2" Click="btn3_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="259,69,0,0" Grid.Row="2" Click="btn9_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="178,191,0,0" Grid.Row="2" Click="btn2_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="178,69,0,0" Grid.Row="2" Click="btn8_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="178,130,0,0" Grid.Row="2" Click="btn5_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="97,130,0,0" Grid.Row="2" Click="btn4_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="97,69,0,0" Grid.Row="2" Click="btn7_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="259,130,0,0" Grid.Row="2" Click="btn6_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="97,191,0,0" Grid.Row="2" Click="btn1_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="178,252,0,0" Grid.Row="2" Click="btn0_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnigual" Content="=" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="71" Margin="264,252,0,0" Grid.Row="2" Click="btnigual_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnmais" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="340,191,0,0" Grid.Row="2" Click="btnmais_Click" Grid.ColumnSpan="2" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnmenos" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="340,130,0,0" Grid.Row="2" Click="btnmenos_Click" Grid.ColumnSpan="2" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnmultiplicacao" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="340,69,0,0" Grid.Row="2" Click="btnmultiplicacao_Click" Grid.ColumnSpan="2" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnquadrado" Content="x^2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="97,5,0,0" Grid.Row="2" Click="btnquadrado_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn_raiz" Content="√" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="178,5,0,0" Grid.Row="2" Click="btn_raiz_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnmodulo" Content="%" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="97,91,0,0" Grid.Row="1" Click="btnmodulo_Click" Padding="9,1,1,1" BorderThickness="3,3,3,3" BorderBrush="White" FontWeight="Bold">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnc" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="259,91,0,0" Grid.Row="1" Click="btnc_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnce" Content="CE" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="178,91,0,0" Grid.Row="1" Click="btnce_Click" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnpi" Content="pi" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="259,5,0,0" Grid.Row="2" BorderBrush="White" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btndelete" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="340,91,0,0" Grid.Row="1" Click="btndelete_Click" Grid.ColumnSpan="2" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btndivisao" Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Height="56" Width="76" Margin="340,5,0,0" Grid.Row="2" Click="btndivisao_Click" Grid.ColumnSpan="2" BorderBrush="White" FontWeight="Bold" BorderThickness="3,3,3,3">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0.5"/>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="156" Margin="-30,209,0,0" Grid.Row="2" VerticalAlignment="Top" Width="144" Source="/susto.png"/>
 
 
     </Grid>
